@@ -9,9 +9,12 @@ const port = process.env.PORT;
 
 
 //Print basics of Open AI on console.
+app.get('/', async (req, res) => {
+    res.send("Backend is running....");
+})
 
-app.get('/test', async (req, res) => {
-    const message = await OpenAI.BasicOpenAI();
+app.get('/chat', async (req, res) => {
+    const message = await OpenAI.ChatOpenAI();
     res.send(message);
 })
 
